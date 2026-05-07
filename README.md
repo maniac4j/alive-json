@@ -1,6 +1,6 @@
 # AliveJson
 
-[![Release](https://jitpack.io/v/maniac4j/AliveJson.svg)](https://jitpack.io/p/maniac4j/AliveJson)
+[![Release](https://jitpack.io/v/mahmudsalomov/AliveJson.svg)](https://jitpack.io/p/mahmudsalomov/AliveJson)
 
 AliveJson is a strict, object-oriented JSON parsing and manipulation library for Java, built entirely on the principles of [Elegant Objects](https://www.elegantobjects.org/).
 
