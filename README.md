@@ -19,7 +19,7 @@ Add this to your `pom.xml`:
 </repositories>
 
 <dependency>
-    <groupId>com.github.maniac4j</groupId>
+    <groupId>com.github.mahmudsalomov</groupId>
     <artifactId>AliveJson</artifactId>
     <version>1.0.0</version>
 </dependency>

@@ -19,7 +19,7 @@ Buni `pom.xml` ga qo'shing:
 </repositories>
 
 <dependency>
-    <groupId>com.github.maniac4j</groupId>
+    <groupId>com.github.mahmudsalomov</groupId>
     <artifactId>AliveJson</artifactId>
     <version>1.0.0</version>
 </dependency>
