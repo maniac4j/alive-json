@@ -1,6 +1,41 @@
 # AliveJson
 
+[![Release](https://jitpack.io/v/maniac4j/AliveJson.svg)](https://jitpack.io/p/maniac4j/AliveJson)
+
 AliveJson — bu [Elegant Objects](https://www.elegantobjects.org/) tamoyillari asosida qurilgan, qat'iy obyektga-yo'naltirilgan (Pure OOP) Java JSON kutubxonasi.
+
+## O'rnatish (Installation)
+
+AliveJson-ni loyihangizga qo'shish uchun `pom.xml` yoki `build.gradle` faylingizga JitPack repozitoriyasini qo'shishingiz kerak:
+
+### Maven
+Buni `pom.xml` ga qo'shing:
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>com.github.maniac4j</groupId>
+    <artifactId>AliveJson</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### Gradle
+`build.gradle` faylining oxiriga qo'shing:
+```gradle
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.mahmudsalomov:AliveJson:1.0.0'
+}
+```
 
 Aksariyat an'anaviy JSON kutubxonalari DTO (Data Transfer Object) lar, `null` qiymatlar, getter/setter'lar hamda ulkan markaziy "Parser" klasslariga tayanadi. AliveJson esa umuman boshqacha yondashuvni taklif etadi. Biz JSON ni shunchaki o'zgartiriladigan jonsiz ma'lumotlar tuzilmasi deb emas, balki jonli, o'zgarmas (immutable) obyektlar sifatida qabul qilamiz.
 

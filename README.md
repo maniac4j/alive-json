@@ -1,6 +1,41 @@
 # AliveJson
 
+[![Release](https://jitpack.io/v/maniac4j/AliveJson.svg)](https://jitpack.io/p/maniac4j/AliveJson)
+
 AliveJson is a strict, object-oriented JSON parsing and manipulation library for Java, built entirely on the principles of [Elegant Objects](https://www.elegantobjects.org/).
+
+## Installation
+
+To use AliveJson in your project, add the JitPack repository to your build file:
+
+### Maven
+Add this to your `pom.xml`:
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>com.github.maniac4j</groupId>
+    <artifactId>AliveJson</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### Gradle
+Add it in your `build.gradle` at the end of repositories:
+```gradle
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.mahmudsalomov:AliveJson:1.0.0'
+}
+```
 
 Most traditional JSON libraries rely heavily on DTOs, `null` references, getters/setters, and heavy central "Parser" classes. AliveJson takes a different approach. We treat JSON not as raw data structures to be manipulated, but as living, immutable objects.
 
