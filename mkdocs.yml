@@ -1,0 +1,48 @@
+site_name: AliveJson
+site_url: https://maniac4j.github.io/alive-json/
+repo_url: https://github.com/maniac4j/alive-json
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Usage (EN): en/usage.md
+  - Architecture: en/architecture.md
+  - Qo'llanma (UZ): uz/usage.md
+  - Javadoc: https://jitpack.io/com/github/maniac4j/alive-json/latest/javadoc/
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - def_list
+  - attr_list
+  - md_in_html

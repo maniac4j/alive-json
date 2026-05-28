@@ -40,7 +40,21 @@ dependencies {
 
 Aksariyat an'anaviy JSON kutubxonalari DTO (Data Transfer Object) lar, `null` qiymatlar, getter/setter'lar hamda ulkan markaziy "Parser" klasslariga tayanadi. AliveJson esa umuman boshqacha yondashuvni taklif etadi. Biz JSON ni shunchaki o'zgartiriladigan jonsiz ma'lumotlar tuzilmasi deb emas, balki jonli, o'zgarmas (immutable) obyektlar sifatida qabul qilamiz.
 
+## Nega Jackson yoki Gson emas?
+
+Agar sizga har bir nanosekund muhim bo'lgan o'ta yuqori tezlikdagi tizim kerak bo'lsa, **Jackson'dan foydalaning**. Ammo siz uzoq yillar yashaydigan, xatoliklarga o'rin yo'q va **qo'llab-quvvatlash (maintainability)** muhim bo'lgan biznes tizim yozayotgan bo'lsangiz, AliveJson eng yaxshi tanlovdir.
+
+| Xususiyat | Jackson / Gson | AliveJson |
+| :--- | :--- | :--- |
+| **Falsafa** | Ma'lumotga yo'naltirilgan (DTO) | Obyektga yo'naltirilgan (Sof OOP) |
+| **Null xavfsizligi** | `null` qaytaradi (NPE xavfi) | **Mutlaqo null-siz** (`JsonNull`) |
+| **O'zgarmaslik** | Odatda o'zgaruvchan POJO'lar | **Qat'iy o'zgarmas (Immutable)** |
+| **Reflection** | Ko'p ishlatiladi (sekin/xavfli) | **Umuman ishlatilmaydi** |
+| Qo'llab-quvvatlash | DTO'lar bilan kuchli bog'liqlik | Interfeyslar orqali kuchsiz bog'liqlik |
+| **Thread Safety** | POJO'ga bog'liq | **Tabiatan thread-safe** |
+
 ## Tezlik va Qulaylik (Performance vs. Maintainability)
+
 
 Boshidan ochiq aytishimiz kerak: **AliveJson eng tezkor JSON kutubxonasi bo'lish uchun yaratilmagan.** Agar loyihangiz soniyasiga millionlab JSON obyektlarni o'qishi kerak bo'lsa (masalan, High-Frequency Trading tizimlari) va har bir mikrosekund muhim bo'lsa, `fastjson2` yoki `Jackson` kabi vositalar ancha yaxshi tanlov. Ular tezlikka erishish uchun xotirani to'g'ridan-to'g'ri o'zgartiradi va obyektlarni ochiq mutatsiya qiladi.
 

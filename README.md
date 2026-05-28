@@ -40,7 +40,21 @@ dependencies {
 
 Most traditional JSON libraries rely heavily on DTOs, `null` references, getters/setters, and heavy central "Parser" classes. AliveJson takes a different approach. We treat JSON not as raw data structures to be manipulated, but as living, immutable objects.
 
+## Why Not Jackson or Gson?
+
+If you are building high-performance infrastructure where every nanosecond counts, **use Jackson**. But if you are building business-critical applications where **maintainability** and **correctness** are paramount, AliveJson is the better choice.
+
+| Feature | Jackson / Gson | AliveJson |
+| :--- | :--- | :--- |
+| **Philosophy** | Data-oriented (DTOs) | Object-oriented (Living Objects) |
+| **Null Safety** | Returns `null` (NPE risk) | **Zero Nulls** (Returns `JsonNull`) |
+| **Immutability** | Usually mutable POJOs | **Strictly Immutable** |
+| **Reflection** | Heavily used (slow/risky) | **Zero Reflection** |
+| Maintainability | High coupling with DTOs | Low coupling via Interfaces |
+| **Thread Safety** | Depends on your POJOs | **Thread-safe by design** |
+
 ## Performance vs. Maintainability
+
 
 It is important to be upfront: **AliveJson is not designed to be the fastest JSON library.** If your project requires parsing millions of JSON objects per second (e.g., High-Frequency Trading or core infrastructure engines) where every microsecond counts, libraries like `fastjson2` or `Jackson` are much better suited for the job. They use low-level memory hacks, mutable states, and byte-level manipulation to achieve incredible speeds.
 
