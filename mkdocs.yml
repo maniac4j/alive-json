@@ -34,7 +34,7 @@ nav:
   - Usage (EN): en/usage.md
   - Architecture: en/architecture.md
   - Qo'llanma (UZ): uz/usage.md
-  - Javadoc: https://jitpack.io/com/github/maniac4j/alive-json/latest/javadoc/
+  - Javadoc: apidocs/index.html
 
 markdown_extensions:
   - pymdownx.highlight:
