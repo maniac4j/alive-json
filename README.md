@@ -1,6 +1,6 @@
 # AliveJson
 
-[![Release](https://jitpack.io/v/mahmudsalomov/AliveJson.svg)](https://jitpack.io/p/mahmudsalomov/AliveJson)
+[![Release](https://jitpack.io/v/maniac4j/alive-json.svg)](https://jitpack.io/p/maniac4j/alive-json)
 
 AliveJson is a strict, object-oriented JSON parsing and manipulation library for Java, built entirely on the principles of [Elegant Objects](https://www.elegantobjects.org/).
 
@@ -19,8 +19,8 @@ Add this to your `pom.xml`:
 </repositories>
 
 <dependency>
-    <groupId>com.github.mahmudsalomov</groupId>
-    <artifactId>AliveJson</artifactId>
+    <groupId>com.github.maniac4j</groupId>
+    <artifactId>alive-json</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.mahmudsalomov:AliveJson:1.0.0'
+    implementation 'com.github.maniac4j:alive-json:1.0.0'
 }
 ```
 
