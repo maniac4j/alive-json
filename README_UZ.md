@@ -22,7 +22,7 @@ Buni `pom.xml` ga qo'shing:
 <dependency>
     <groupId>com.github.maniac4j</groupId>
     <artifactId>alive-json</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.maniac4j:alive-json:1.0.0'
+    implementation 'com.github.maniac4j:alive-json:1.1.0'
 }
 ```
 
@@ -114,7 +114,10 @@ final Json user = new Without(
     "status"
 );
 final String text = new Formatted(user).text();
-// {"id":101,"name":"Pure OOP"}
+// {
+//   "id": 101,
+//   "name": "Pure OOP"
+// }
 ```
 
 ### 3. Ichma-ich joylashgan xususiyatni yangilash (Deep Update)
