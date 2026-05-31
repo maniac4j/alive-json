@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"uz.maniac4j"},{"l":"uz.maniac4j.alivejson"},{"l":"uz.maniac4j.alivejson.build"},{"l":"uz.maniac4j.alivejson.io"},{"l":"uz.maniac4j.alivejson.types"},{"l":"uz.maniac4j.examples"}];updateSearchResults();
