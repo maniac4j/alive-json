@@ -55,27 +55,7 @@ final class Cursor implements Input {
     }
 
     @Override
-    public void advance(final int amount) {
-        this.index[0] += amount;
-    }
-
-    @Override
     public boolean hasNext() {
         return this.index[0] < this.source.length();
-    }
-
-    @Override
-    public boolean startsWith(final String prefix) {
-        return this.source.startsWith(prefix, this.index[0]);
-    }
-
-    @Override
-    public String substring(final int start) {
-        return this.source.substring(start, this.index[0]);
-    }
-
-    @Override
-    public int position() {
-        return this.index[0];
     }
 }

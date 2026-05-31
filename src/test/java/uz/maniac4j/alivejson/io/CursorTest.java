@@ -41,21 +41,21 @@ public final class CursorTest {
     }
 
     @Test
-    public void advancesByGivenAmount() {
-        final Cursor cursor = new Cursor("abcdef");
-        cursor.advance(3);
+    public void advancesCorrectly() {
+        final Cursor cursor = new Cursor("abc");
+        cursor.advance();
         MatcherAssert.assertThat(
-            "Cursor failed to advance by specific amount",
+            "Cursor failed to advance to next character",
             cursor.current(),
-            Matchers.equalTo('d')
+            Matchers.equalTo('b')
         );
     }
 
     @Test
-    public void detectsPrefixCorrectly() {
+    public void detectsHasNext() {
         MatcherAssert.assertThat(
-            "Cursor failed to detect prefix correctly",
-            new Cursor("hello world").startsWith("hello"),
+            "Cursor failed to detect that it has more characters",
+            new Cursor("a").hasNext(),
             Matchers.equalTo(true)
         );
     }

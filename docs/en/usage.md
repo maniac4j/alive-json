@@ -13,6 +13,19 @@ import uz.maniac4j.alivejson.io.Parsed;
 final Json json = new Parsed("{\"id\": 1, \"name\": \"EO\"}");
 ```
 
+## Parsing from InputStream
+
+You can also parse JSON directly from an `InputStream`. This is more memory-efficient for large files or network streams.
+
+```java
+import java.io.InputStream;
+import uz.maniac4j.alivejson.Json;
+import uz.maniac4j.alivejson.io.ParsedStream;
+
+final InputStream stream = ...;
+final Json json = new ParsedStream(stream);
+```
+
 ## Accessing Values
 
 You can access object fields by key or array elements by index. If a value is missing, AliveJson returns a `JsonNull` object instead of `null`.

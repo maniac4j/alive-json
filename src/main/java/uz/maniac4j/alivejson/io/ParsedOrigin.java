@@ -11,25 +11,34 @@ import uz.maniac4j.alivejson.Json;
 final class ParsedOrigin {
 
     /**
-     * Source text.
+     * Source input.
      */
-    private final String source;
+    private final Input input;
 
     /**
-     * Constructor.
+     * Primary constructor.
+     *
+     * @param src Source input
+     */
+    ParsedOrigin(final Input src) {
+        this.input = src;
+    }
+
+    /**
+     * Secondary constructor.
      *
      * @param text Source text
      */
     ParsedOrigin(final String text) {
-        this.source = text;
+        this(new Cursor(text));
     }
 
     /**
-     * Parses the source into a Json object.
+     * Parses the input into a Json object.
      *
      * @return Json object
      */
     Json json() {
-        return new ParsedElement(new Cursor(this.source)).value();
+        return new ParsedElement(this.input).value();
     }
 }

@@ -26,8 +26,10 @@ final class ParsedNull implements Token {
 
     @Override
     public Json value() {
-        if (this.cursor.startsWith("null")) {
-            this.cursor.advance(4);
+        if (this.cursor.match('n')) {
+            this.cursor.match('u');
+            this.cursor.match('l');
+            this.cursor.match('l');
         }
         return new JsonNull();
     }

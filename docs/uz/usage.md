@@ -13,6 +13,19 @@ import uz.maniac4j.alivejson.io.Parsed;
 final Json json = new Parsed("{\"id\": 1, \"name\": \"EO\"}");
 ```
 
+## InputStream orqali tahlil qilish
+
+JSONni to'g'ridan-to'g'ri `InputStream`dan tahlil qilishingiz ham mumkin. Bu katta fayllar yoki tarmoq oqimlari uchun xotirani tejash imkonini beradi.
+
+```java
+import java.io.InputStream;
+import uz.maniac4j.alivejson.Json;
+import uz.maniac4j.alivejson.io.ParsedStream;
+
+final InputStream oqim = ...;
+final Json json = new ParsedStream(oqim);
+```
+
 ## Qiymatlarga murojaat
 
 Obyekt maydonlariga kalit (key) orqali, massiv elementlariga esa indeks orqali murojaat qilishingiz mumkin. Agar qiymat mavjud bo'lmasa, AliveJson `null` o'rniga `JsonNull` obyektini qaytaradi.

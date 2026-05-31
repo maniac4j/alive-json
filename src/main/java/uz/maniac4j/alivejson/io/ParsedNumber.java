@@ -26,16 +26,17 @@ final class ParsedNumber implements Token {
 
     @Override
     public Json value() {
-        final int start = this.cursor.position();
+        final StringBuilder builder = new StringBuilder();
         while (this.cursor.hasNext()) {
             final char current = this.cursor.current();
             if (Character.isDigit(current) || current == '.' || current == '-' || current == '+' || current == 'e' || current == 'E') {
+                builder.append(current);
                 this.cursor.advance();
             } else {
                 break;
             }
         }
-        final String num = this.cursor.substring(start);
+        final String num = builder.toString();
         if (num.contains(".")) {
             return new JsonNumber(Double.parseDouble(num));
         }

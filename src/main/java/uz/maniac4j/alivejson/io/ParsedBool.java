@@ -26,11 +26,17 @@ final class ParsedBool implements Token {
 
     @Override
     public Json value() {
-        if (this.cursor.startsWith("true")) {
-            this.cursor.advance(4);
+        if (this.cursor.match('t')) {
+            this.cursor.match('r');
+            this.cursor.match('u');
+            this.cursor.match('e');
             return new JsonBool(true);
         }
-        this.cursor.advance(5);
+        this.cursor.match('f');
+        this.cursor.match('a');
+        this.cursor.match('l');
+        this.cursor.match('s');
+        this.cursor.match('e');
         return new JsonBool(false);
     }
 }

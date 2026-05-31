@@ -22,7 +22,7 @@ Buni `pom.xml` ga qo'shing:
 <dependency>
     <groupId>com.github.maniac4j</groupId>
     <artifactId>alive-json</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.maniac4j:alive-json:1.1.0'
+    implementation 'com.github.maniac4j:alive-json:1.2.0'
 }
 ```
 
@@ -65,7 +65,7 @@ Agar siz biznes mantiqlarga boy, xatolikka o'rin yo'q bo'lgan, uzoq yillar davom
 - **`null` larsiz hayot:** Kutubxona hech qachon `null` qaytarmaydi, uning o'rniga `JsonNull` obyekti qaytadi. Shu orqali kodingizdagi `NullPointerException` (NPE) lar va cheksiz `if != null` tekshiruvlari yo'qoladi.
 - **Qat'iy O'zgarmaslik:** Har bir obyekt `final` va o'zgarmas. Siz holatni mutatsiya qilmaysiz, aksincha dekoratorlarni bir-biriga o'raysiz. Bu kodni to'g'ridan-to'g'ri ko'p oqimli ishlashga (thread-safe) moslashtiradi.
 - **Markazlashmagan Mantiq:** Barcha narsaga javob beruvchi bitta katta `ObjectMapper` klassi yo'q. Mantiq kichik, o'qishli va aniq maqsadli obyektlarga bo'lingan.
-- **Kengaytiriluvchi Arxitektura (Extensibility):** Tahlil qilish (parsing) mexanizmi qotib qolgan String matniga emas, balki abstrakt `Input` interfeysiga tayanadi. Bu Ochiq-Yopiqlik (Open-Closed) tamoyilini ta'minlaydi. Ya'ni kelajakda kodni o'zgartirmasdan turib, to'g'ridan-to'g'ri Tarmoqdan yoki Fayldan (`InputStream`) JSON o'qiydigan qo'shimchalar yozish imkonini beradi.
+- **Kengaytiriluvchi Arxitektura (Extensibility):** Tahlil qilish (parsing) mexanizmi `Input` interfeysiga tayanadi. Kutubxona JSON-ni matn (String) shaklida ham, to'g'ridan-to'g'ri oqimdan (`InputStream`) ham o'qishni (`ParsedStream`) mahalliy darajada qo'llab-quvvatlaydi.
 
 Biz ozgina mashina tezligidan voz kechib, evaziga mutlaq barqarorlik va inson uchun tushunarli kodga ega bo'lamiz.
 

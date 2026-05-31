@@ -14,7 +14,7 @@ All classes in AliveJson are `final` and all objects are immutable. This makes t
 Static methods are just procedures in disguise. AliveJson uses only constructors and instance methods. Logic is encapsulated within objects.
 
 ### 4. Interfaces First
-All public functionality is defined in interfaces (like `Json`, `Input`). Users interact with abstractions, not implementations.
+All public functionality is defined in interfaces (like `Json`). Users interact with abstractions, not implementations.
 
 ## Design Patterns
 

@@ -22,7 +22,7 @@ Add this to your `pom.xml`:
 <dependency>
     <groupId>com.github.maniac4j</groupId>
     <artifactId>alive-json</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.maniac4j:alive-json:1.1.0'
+    implementation 'com.github.maniac4j:alive-json:1.2.0'
 }
 ```
 
@@ -65,7 +65,7 @@ If you are writing business-logic-heavy applications where there is no room for 
 - **No `null`s:** The library never returns `null`. You get `JsonNull` objects instead. This eliminates `NullPointerException`s entirely.
 - **Strict Immutability:** Every object is `final`. You don't mutate state; you compose decorators. This makes the code naturally thread-safe.
 - **Decentralized Logic:** There is no "God Class" like `ObjectMapper`. Logic is distributed across small, readable objects.
-- **Extensible Architecture:** The parsing mechanism depends on an `Input` interface, not hardcoded Strings. This Open-Closed Principle ensures the library can easily be extended to parse JSON directly from network sockets or files (`InputStream`) without changing a single line of internal logic.
+- **Extensible Architecture:** The parsing mechanism depends on an `Input` interface. The library natively supports parsing from Strings and directly from network sockets or files via `InputStream` (`ParsedStream`).
 
 We sacrifice raw machine speed to gain absolute stability and human readability.
 
@@ -75,14 +75,18 @@ AliveJson follows the Pure OOP paradigm. Examples below show how to compose obje
 
 ### 1. Basic Parsing and Reading
 
-Read a JSON string and extract values safely without worrying about null checks.
+Read a JSON string or stream and extract values safely without worrying about null checks.
 
 ```java
 import uz.maniac4j.alivejson.Json;
 import uz.maniac4j.alivejson.io.Parsed;
+import uz.maniac4j.alivejson.io.ParsedStream;
 
-// Parsing is lazy; it only happens when you request a value.
+// Parsing from String
 final Json source = new Parsed("{\"name\":\"AliveJson\",\"version\":1}");
+// Parsing from InputStream
+final Json stream = new ParsedStream(inputStream);
+
 final String name = source.value("name").text(); // "AliveJson"
 // Requesting a non-existent key returns a safe JsonNull object, not null!
 final String missing = source.value("missing").text(); // "null"
